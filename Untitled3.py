@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[40]:
+# In[56]:
 
 
 import nltk
@@ -69,23 +69,23 @@ chars = 4
 for i in range(len(articulo_Eng1)-chars):
     seq = articulo_Eng1[i:i+chars]
     if seq not in ngramasEng.keys():
-        ngramasEng[seq] = []
+        ngramasEng[seq] = [1]
         nGramasTotales += 1
-    ngramasEng[seq].append(articulo_Eng1[i+chars])
-
+    ngramasEng[seq][0] += 1
+    
 for i in range(len(articulo_Esp1)-chars):
     seq = articulo_Esp1[i:i+chars]
     if seq not in ngramasEsp.keys():
-        ngramasEsp[seq] = []
+        ngramasEsp[seq] = [1]
         nGramasTotales += 1
-    ngramasEsp[seq].append(articulo_Esp1[i+chars])
+    ngramasEsp[seq][0] += 1
 
 for i in range(len(articulo_Port1)-chars):
     seq = articulo_Port1[i:i+chars]
     if seq not in ngramasPort.keys():
-        ngramasPort[seq] = []
+        ngramasPort[seq] = [1]
         nGramasTotales += 1
-    ngramasPort[seq].append(articulo_Port1[i+chars])
+    ngramasPort[seq][0] += 1
 
 dict(list(ngramasEng.items())[0:50])
 
